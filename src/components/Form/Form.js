@@ -57,7 +57,9 @@ const Form = ({ currentId, setCurrentId }) => {
         noValidate
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">Creating a Memory</Typography>
+        <Typography variant="h6">
+          {currentId ? `Editing "${post.title}"` : "Creating a Memory"}
+        </Typography>
         <TextField
           name="creator"
           variant="outlined"
@@ -91,7 +93,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <TextField
           name="tags"
           variant="outlined"
-          label="Tags (coma separated)"
+          label="Tags"
           fullWidth
           value={postData.tags}
           onChange={(e) =>
